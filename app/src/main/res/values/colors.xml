@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="grey">#808080</color>
+    <color name="NavIcon">#808080</color>
+    <color name="none">#00000000</color>
+    <color name="black">#000000</color>
+    <color name="lightgrey">#d3d3d3</color>
+    <color name="Primaryorange">#FFFF9800</color>
+
+        <color name="purple_200">#FFBB86FC</color>
+        <color name="purple_500">#FF6200EE</color>
+        <color name="purple_700">#FF3700B3</color>
+        <color name="teal_200">#FF03DAC5</color>
+        <color name="white">#FFFFFFFF</color>
+    <color name="red">#FF0000</color>
+
+    <color name="colorBlack">#42000000</color>
+    <color name="colorLayout">#FFDC00</color>
+    <color name="colorLayout3">#FAFAFA</color>
+    <color name="colorLogo">#FFC107</color>
+    <color name="colorLine">#C0B071</color>
+    <color name="colorSettings">#CAC6B0</color>
+    <color name="colorSuccess">#00AB5E</color>
+    <color name="transparent">#00000000</color>
+
+
+</resources>

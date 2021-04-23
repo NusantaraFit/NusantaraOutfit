@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NusaPayment"
+    android:id="@+id/nusantara_payment">
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/textView2"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="Hello World!"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintLeft_toLeftOf="parent"-->
+    <!--        app:layout_constraintRight_toRightOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="219dp"
+        android:background="@color/colorLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageButton
+            android:id="@+id/previous_np"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/previous"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints"
+            tools:layout_conversion_absoluteHeight="37dp"
+            tools:layout_conversion_absoluteWidth="110dp"
+            android:onClick="PreviousNP"/>
+
+        <RelativeLayout
+            android:id="@+id/settings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/setting_logo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.926"
+            app:layout_constraintStart_toEndOf="@+id/imageButton"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints"
+            tools:layout_conversion_absoluteHeight="40dp"
+            tools:layout_conversion_absoluteWidth="40dp">
+
+
+            <ImageButton
+                android:layout_centerInParent="true"
+                android:layout_width="23dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/settings" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="264dp"
+            android:layout_height="219dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/settings"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/imageButton"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
+
+            <TextView
+                android:id="@+id/total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="57dp"
+                android:layout_marginTop="104dp"
+                android:text="T o t a l"
+                android:textColor="#fff"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.501"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="57dp" />
+
+            <TextView
+                android:id="@+id/b"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="85dp"
+                android:layout_marginBottom="51dp"
+                android:text="7.750.000"
+                android:textAlignment="center"
+                android:textColor="#fff"
+                android:textStyle="bold"
+                app:autoSizeMaxTextSize="100dp"
+                app:autoSizeMinTextSize="30dp"
+                app:autoSizeTextType="uniform"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/a"
+                app:layout_constraintTop_toBottomOf="@+id/total"
+                tools:ignore="MissingConstraints"
+                tools:layout_conversion_absoluteHeight="62dp"
+                tools:layout_conversion_absoluteWidth="210dp"
+                android:layout_marginRight="85dp"
+                android:gravity="center_horizontal" />
+
+            <TextView
+                android:id="@+id/a"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginBottom="66dp"
+                android:text="Rp"
+                android:textAlignment="center"
+                android:textColor="#fff"
+                android:textSize="30px"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/b"
+                tools:ignore="MissingConstraints"
+                tools:layout_conversion_absoluteHeight="21dp"
+                tools:layout_conversion_absoluteWidth="18dp"
+                android:gravity="center_horizontal" />
+        </RelativeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="114dp"
+        android:layout_marginBottom="2dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+        app:layout_constraintVertical_bias="0.0">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="5px"
+            android:background="@color/colorLine" />
+
+        <ImageButton
+            android:id="@+id/wallet"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/wallet"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="26dp" />
+
+        <ImageButton
+            android:id="@+id/qr"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="145dp"
+            android:background="@drawable/qr" />
+
+        <ImageButton
+            android:id="@+id/transfer"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="30dp"
+            android:background="@drawable/transfer"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="30dp"/>
+
+    </RelativeLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout3"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:background="@color/colorLayout3"
+        android:columnCount="4"
+        android:orientation="horizontal"
+        android:rowCount="4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="MissingConstraints">
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="@drawable/shadow"
+            android:elevation="2px"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/history"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="22dp"
+            android:layout_marginTop="25dp"
+            android:text="History Transaksi"
+            android:textColor="#000"
+            android:textSize="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout4"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/colorLayout3"
+        android:columnCount="4"
+        android:orientation="vertical"
+        android:rowCount="4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout3"
+        tools:ignore="MissingConstraints">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints">
+
+<!--            <ListView-->
+<!--                android:id="@+id/listviewnya"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                tools:ignore="MissingConstraints"-->
+<!--                tools:layout_editor_absoluteX="-17dp"-->
+<!--                tools:layout_editor_absoluteY="395dp"-->
+<!--                android:layout_below="@+id/history">-->
+
+<!--            </ListView>-->
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

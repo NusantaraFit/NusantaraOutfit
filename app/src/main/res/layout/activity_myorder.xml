@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgorund"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".OrderActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="115dp"
+        android:background="#FFC107">
+        <ImageButton
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/previous"
+            android:textColor="#636262" />
+
+        <TextView
+            android:layout_width="130dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:text="My Order"
+            android:layout_marginTop="50dp"
+            android:textColor="@color/black"
+            android:textSize="30dp" />
+        <RelativeLayout
+            android:layout_marginTop="-15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="60dp"
+            android:src="@drawable/curva1" />
+
+        <Button
+            android:id="@+id/chat1"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="70dp"
+            android:background="@drawable/cart" />
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="5dp"
+            android:src="@drawable/curva1" />
+
+        <Button
+            android:id="@+id/troli1"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/comment" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tabGravity="fill"
+        app:tabIndicatorColor="#FFC107"
+        app:tabIndicatorHeight="2dp"
+        app:tabMode="fixed"
+        app:tabSelectedTextColor="#FFC107" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior" />
+
+    <!--    <RelativeLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="500dp">-->
+<!--        <ImageView-->
+<!--            android:id="@+id/imgorder"-->
+<!--            android:layout_width="150dp"-->
+<!--            android:layout_height="150dp"-->
+<!--            android:layout_centerHorizontal="true"-->
+<!--            android:layout_centerVertical="true"-->
+<!--            android:src="@drawable/product"-->
+<!--            />-->
+<!--        <TextView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:layout_below="@+id/imgorder"-->
+<!--            android:text="No order yet"-->
+<!--            android:textSize="28dp"-->
+<!--            android:textAlignment="center"/>-->
+<!--    </RelativeLayout>-->
+</LinearLayout>

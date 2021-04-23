@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F6F4F4"
+    android:fitsSystemWindows="true">
+
+    <ImageButton
+        android:id="@+id/previous"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/previous"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/cart"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/background_img"
+        android:elevation="5dp"
+        android:src="@drawable/cart_25"
+        app:layout_constraintStart_toEndOf="@+id/previous"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/comment"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/background_img"
+        android:elevation="5dp"
+        android:src="@drawable/comment_25"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.542"
+        app:layout_constraintStart_toEndOf="@+id/cart"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/bulat1"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_marginLeft="160dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/swticher"
+        app:layout_constraintBottom_toTopOf="@+id/content"
+        app:layout_constraintRight_toLeftOf="@id/bulat2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.933" />
+
+    <View
+        android:id="@+id/bulat2"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:background="@drawable/switcher_2"
+        app:layout_constraintBottom_toTopOf="@+id/content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.933" />
+
+    <View
+        android:id="@+id/bulat3"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="160dp"
+        android:background="@drawable/switcher_2"
+        app:layout_constraintBottom_toTopOf="@+id/content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/bulat2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.933" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="212dp"
+        android:layout_marginEnd="44dp"
+        android:layout_marginRight="44dp"
+        android:backgroundTint="@color/white"
+        android:src="@drawable/poker"
+        android:scaleType="fitEnd"
+        app:layout_constraintBottom_toBottomOf="@+id/bulat2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+    </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="50dp"
+        app:cardCornerRadius="20dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/Nominal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bck_frame"
+            app:layout_constraintBottom_toBottomOf="@+id/content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
+
+            <TextView
+                android:id="@+id/textProduct"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="20dp"
+                android:text="Name of Product"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textShop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textProduct"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="10dp"
+                android:text="Name of Shop"
+                android:textColor="@color/grey"/>
+
+            <TextView
+                android:id="@+id/txtColor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textShop"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:text="Color"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnColor"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_below="@id/txtColor"
+                android:layout_marginLeft="40dp"
+                android:background="@drawable/btn_color_orange"
+                android:text="Orange"
+                android:textAllCaps="false"
+                android:textColor="#FFAB40" />
+
+            <Button
+                android:id="@+id/btnColor2"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_below="@id/txtColor"
+                android:layout_marginLeft="15dp"
+                android:layout_toRightOf="@id/btnColor"
+                android:background="@drawable/btn_color_blue"
+                android:text="Blue"
+                android:textAllCaps="false"
+                android:textColor="#536DFE" />
+
+            <Button
+                android:id="@+id/btnColor3"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_below="@id/txtColor"
+                android:layout_marginLeft="15dp"
+                android:layout_toRightOf="@id/btnColor2"
+                android:background="@drawable/btn_color_purple"
+                android:text="Purple"
+                android:textAllCaps="false"
+                android:textColor="#A353FE" />
+
+            <TextView
+                android:id="@+id/txtSize"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btnColor3"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:text="Size"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_SizeS"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_below="@id/txtSize"
+                android:layout_marginLeft="40dp"
+                android:background="@drawable/back_size"
+                android:text="S"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/btn_SizeM"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_below="@id/txtSize"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@id/btn_SizeS"
+                android:background="@drawable/back_size"
+                android:text="M"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/btn_SizeL"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_below="@id/txtSize"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@id/btn_SizeM"
+                android:background="@drawable/back_size"
+                android:text="S"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/btn_SizeXL"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_below="@id/txtSize"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@id/btn_SizeL"
+                android:background="@drawable/back_size"
+                android:text="XL"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btn_SizeXL"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:text="@string/underline"
+                android:textColor="#536DFE" />
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/Nominal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bck_frame">
+
+            <TextView
+                android:id="@+id/txtprice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="15dp"
+                android:textColor="@color/grey"
+                android:text="Price" />
+
+            <TextView
+                android:id="@+id/txtNominal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="220dp"
+                android:layout_marginTop="15dp"
+                android:layout_toRightOf="@id/txtprice"
+                android:gravity="right"
+                android:text="$999,999.00"
+                android:textColor="@color/grey"/>
+
+            <Button
+                android:id="@+id/btnSaveCart"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@id/txtNominal"
+                android:layout_marginHorizontal="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="30dp"
+                android:background="@drawable/btn_save_cart"
+                android:text="save to cart"
+                android:textColor="@color/white"/>
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
