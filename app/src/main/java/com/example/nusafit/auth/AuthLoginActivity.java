@@ -20,6 +20,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.nusafit.MainActivity;
 import com.example.nusafit.R;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
@@ -29,6 +31,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.shobhitpuri.custombuttons.GoogleSignInButton;
 
 public class AuthLoginActivity extends AppCompatActivity {
 
@@ -42,7 +45,11 @@ public class AuthLoginActivity extends AppCompatActivity {
 
     private EditText txtEmail, txtPassword;
     private TextInputLayout inputEmail, inputPassword;
-    Button BtnLogin;
+    private Button BtnLogin;
+
+//    GoogleSignInButton signInButton;
+//    private GoogleApiClient googleApiClient;
+//    private static final int SIGN_IN = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,7 +87,10 @@ public class AuthLoginActivity extends AppCompatActivity {
         });
 
         // Login Akun Google
-
+//        GoogleSignInOptions gso = new GoogleSignInOptions().Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
+//
+//        googleApiClient = new GoogleApiClient.Builder(this).enableAutoManage(this, this)
+//                .addApi(Auth.GOOGLE_SIGN_IN_API, gso).build();
 
         // Ke Register Activity
         register = (TextView) findViewById(R.id.tvRegister);
