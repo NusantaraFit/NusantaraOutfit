@@ -19,11 +19,14 @@ import com.example.nusafit.R;
 import com.example.nusafit.entity.UserNF;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import org.w3c.dom.Text;
 
 import static android.text.Html.fromHtml;
 
@@ -34,8 +37,10 @@ public class AuthRegisterActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private DatabaseReference mDatabase;
 
+    private EditText edtName,edtEmail, edtPassword, edtConPassword;
+    private TextInputLayout inputNama, inputEmail, inputPassword, inputConPassword;
+
     private TextView tvBackToLogin;
-    private EditText TxtName,TxtEmail, TxtPassword, TxtConPassword;
     private Button BtnRegister;
 
     @Override
@@ -46,18 +51,44 @@ public class AuthRegisterActivity extends AppCompatActivity {
         mDatabase = FirebaseDatabase.getInstance().getReference();
         mAuth = FirebaseAuth.getInstance();
 
-        TxtName = (EditText) findViewById(R.id.txtNameReg);
-        TxtEmail = (EditText) findViewById(R.id.txtEmailReg);
-        TxtPassword = (EditText) findViewById(R.id.txtPasswordReg);
-        TxtPassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
-        TxtConPassword = (EditText) findViewById(R.id.txtConPasswordReg);
-        TxtConPassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+        edtName = findViewById(R.id.masukNama);
+        inputNama = findViewById(R.id.inputNama);
+        edtEmail = findViewById(R.id.masukEmail);
+        inputEmail = findViewById(R.id.inputEmail);
+        edtPassword = findViewById(R.id.masukPassword);
+        inputPassword = findViewById(R.id.inputPassword);
+        edtConPassword = findViewById(R.id.masukConPassword);
+        inputConPassword = findViewById(R.id.inputConPassword);
+
         BtnRegister = (Button) findViewById(R.id.btnRegister);
         BtnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 register();
-                new Intent(getApplicationContext(), MainActivity.class);
+
+                // Cek Inputan Register
+                if (edtName.getText().toString().trim().isEmpty()) {
+                    inputNama.setError("Nama tidak boleh kosong");
+                    return;
+                }
+
+                if (edtEmail.getText().toString().trim().isEmpty()) {
+                    inputEmail.setError("Email tidak boleh kosong");
+                    return;
+                }
+
+                if (edtPassword.getText().toString().trim().isEmpty()) {
+                    inputPassword.setError("Password tidak boleh kosong");
+                    return;
+                } String pass = edtPassword.getText().toString();
+                if (TextUtils.isEmpty(pass) || pass.length() < 6) {
+                    inputPassword.setError("Password minimal membutuhkan 6 karakter");
+                    return;
+                }
+
+                if (edtConPassword.getText().toString().trim().isEmpty()) {
+                    inputConPassword.setError("Masukkan Konfirmasi Password");
+                }
             }
         });
         tvBackToLogin = (TextView) findViewById(R.id.tvBackToLogin);
@@ -76,8 +107,8 @@ public class AuthRegisterActivity extends AppCompatActivity {
             return;
         }
 
-        String email = TxtEmail.getText().toString();
-        String password = TxtPassword.getText().toString();
+        String email = edtEmail.getText().toString();
+        String password = edtPassword.getText().toString();
 
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -88,7 +119,7 @@ public class AuthRegisterActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             onAuthSuccess(task.getResult().getUser());
                         } else {
-                            Toast.makeText(AuthRegisterActivity.this, "Register Failed :(, Please try again", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(AuthRegisterActivity.this, "Registrasi Gagal, Mohon coba lagi", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
@@ -96,11 +127,11 @@ public class AuthRegisterActivity extends AppCompatActivity {
 
     //Auth success Register
     private void onAuthSuccess(FirebaseUser user) {
-        String username = TxtName.getText().toString();
+        String username = edtName.getText().toString();
 
         writeNewUser(user.getUid(), username, user.getEmail());
 
-        Toast.makeText(AuthRegisterActivity.this, "Register Done !!!", Toast.LENGTH_SHORT).show();
+        Toast.makeText(AuthRegisterActivity.this, "Registrasi Berhasil !", Toast.LENGTH_SHORT).show();
         startActivity(new Intent(getApplicationContext(), AuthLoginActivity.class));
         finish();
     }
@@ -111,46 +142,55 @@ public class AuthRegisterActivity extends AppCompatActivity {
         mDatabase.child("userNF").child(userID).setValue(userNF);
     }
 
-    //Form validasi register
+    // Validasi register
     private boolean validateForm() {
         boolean result = true;
 
-        //Validasi Nama
-        if (TextUtils.isEmpty(TxtName.getText().toString())) {
-            TxtName.setError("Tolong masukkan nama yang benar");
+        // Validasi Nama
+        if (TextUtils.isEmpty(edtName.getText().toString())) {
             result = false;
         } else {
-            TxtName.setError(null);
+            edtName.setError(null);
         }
 
-        //Validasi Email
-        if (TextUtils.isEmpty(TxtEmail.getText().toString())) {
-            TxtEmail.setError("Tolong masukkan alamat email yang benar");
+        // Validasi Email
+        if (TextUtils.isEmpty(edtEmail.getText().toString())) {
             result = false;
         } else {
-            TxtEmail.setError(null);
+            edtEmail.setError(null);
         }
 
-        //Validasi Password
-        String password = TxtPassword.getText().toString().trim();
-        String conpassword = TxtConPassword.getText().toString().trim();
+        // Validasi Password
 
-        if (password.isEmpty()) {
-            TxtPassword.setText("Password tidak boleh kosong");
-            result = false;
-        } if (password.length()<5) {
-            TxtPassword.setText("Password harus lebih dari 5 karakter");
-            result = false;
-        }
-
-        if (!password.equals(conpassword)) {
-            TxtConPassword.setText("Password tidak sama");
+        // Password
+        if (TextUtils.isEmpty(edtPassword.getText().toString())) {
             result = false;
         } else {
-            TxtConPassword.setText("Password sama");
-            result = true;
+            inputPassword.setError(null);
+        }
+
+        // Konfirmasi Password
+        if (TextUtils.isEmpty(edtConPassword.getText().toString())) {
+            inputConPassword.setError("Masukkan Ulang Password untuk Konfirmasi");
+            result = false;
+        } else {
+            inputConPassword.setError(null);
+        }
+
+        // Cek kesamaan password dan confirm password
+        if (!edtConPassword.getText().toString().equals(edtPassword.getText().toString())) {
+            inputConPassword.setError("Password tidak sama");
+            result = false;
+        } else {
+            inputConPassword.setError(null);
         }
 
         return result;
+    }
+
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(getApplicationContext(), AuthLoginActivity.class));
+        finish();
     }
 }

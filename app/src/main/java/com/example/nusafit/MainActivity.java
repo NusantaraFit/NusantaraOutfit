@@ -23,43 +23,11 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_home);
-//        ArrayList<Pay> arrayPay = new ArrayList<>();
-//        PayAdapter adapter = new PayAdapter(this, arrayPay);
-//        ListView listView = (ListView) findViewById(R.id.list);
-//        listView.setAdapter(adapter);
-//
-//        Pay pay = new Pay(R.drawable.logo, "Fill in the balance", "11.12.21", "+ 7.750.000", "Success");
-//        adapter.add(pay);
-//
-//        pay = new Pay(R.drawable.logo, "Payment", "11.12.21", "+ 10.000.000", "Succes");
-//        adapter.add(pay);
-//
-//        pay = new Pay(R.drawable.logo, "Transfer", "11.12.21", "+ 100.000.000", "Failed");
-//        adapter.add(pay);
 
         loadFragment(new FragmentHome());
 
         BottomNavigationView navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(this);
-
-//        //Camera
-//        imageView = findViewById(R.id.image_view);
-//        btn = findViewById(R.id.btnOpen);
-//
-//        if(ContextCompat.checkSelfPermission(MainActivity.this,
-//                Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED){
-//            ActivityCompat.requestPermissions(MainActivity.this, new String[]{
-//                            Manifest.permission.CAMERA
-//                    },
-//                    100);
-//        }
-//        btn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-//                startActivityForResult(intent,100);
-//            }
-//        });
 
     }
 
@@ -81,7 +49,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
             case R.id.navigation_home:
                 fragment = new FragmentHome();
                 break;
-            case R.id.navigation_quiz:
+            case R.id.navigation_store:
                 fragment = new FragmentStore();
                 break;
             case R.id.navigation_profile:

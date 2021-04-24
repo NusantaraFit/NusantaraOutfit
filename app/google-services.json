@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1087931151910",
+    "project_id": "nusantaraoutfit-cda16",
+    "storage_bucket": "nusantaraoutfit-cda16.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1087931151910:android:b845232fab56746c9d18e7",
+        "android_client_info": {
+          "package_name": "com.example.nusafit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1087931151910-r1jrseujm0g1q9pvl9ehnbld86kvm56e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.nusafit",
+            "certificate_hash": "395c66651f2f926d34ff960b69c55848a5d932b1"
+          }
+        },
+        {
+          "client_id": "1087931151910-u642rhr06r7s6ta25d801gea7uqt01u0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCu1zr5y8zPxtzMVVA30uDt4yqLZeRrOpo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1087931151910-u642rhr06r7s6ta25d801gea7uqt01u0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
