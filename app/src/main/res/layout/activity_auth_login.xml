@@ -27,8 +27,7 @@
         app:hintTextAppearance="@style/TextAppearance.AppCompat"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logoLogin"
-        android:background="roun">
+        app:layout_constraintTop_toBottomOf="@+id/logoLogin">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edtEmail"
