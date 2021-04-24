@@ -19,6 +19,7 @@ import com.example.nusafit.R;
 import com.example.nusafit.RoomchatViewPager;
 import com.example.nusafit.SettingProfileActivity;
 import com.example.nusafit.ShoppingChartActivity;
+import com.example.nusafit.auth.AuthLoginActivity;
 import com.example.nusafit.input_product;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -97,6 +98,15 @@ public class FragmentProfile extends Fragment {
                         mAuth.signOut();
                     }
                 });
+                builder.setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                    }
+                });
+
+                AlertDialog alertDialog = builder.create();
+                alertDialog.show();
             }
         });
         authStateListener = new FirebaseAuth.AuthStateListener() {
@@ -105,6 +115,7 @@ public class FragmentProfile extends Fragment {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
                 if (user == null) {
                     Toast.makeText(getActivity(), "Logout Berhasil !", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(getActivity(), AuthLoginActivity.class));
                     getActivity().finish();
                 }
             }
@@ -152,6 +163,17 @@ public class FragmentProfile extends Fragment {
         startActivity(intent);
     }
 
+    @Override
+    public void onStart() {
+        super.onStart();
+        mAuth.addAuthStateListener(authStateListener);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        mAuth.removeAuthStateListener(authStateListener);
+    }
 }
 //    @Override
 //            public void onClick(View v) {
