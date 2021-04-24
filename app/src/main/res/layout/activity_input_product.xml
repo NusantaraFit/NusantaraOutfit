@@ -1,122 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:background="@color/Primaryorange"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_baseline_arrow_back"
-                android:backgroundTint="@color/transparent"/>
-
-            <ImageButton
-                android:layout_margin="8dp"
-                android:id="@+id/btn_delete"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:background="@drawable/rounded3"
-                android:backgroundTint="@color/red"
-                android:src="@drawable/ic_baseline_delete_24" />
-
-            <ImageButton
-                android:id="@+id/btn_save"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:background="@drawable/rounded3"
-                android:backgroundTint="@color/colorSuccess"
-                android:src="@drawable/ic_baseline_save_24" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="8dp">
-
-            <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_margin="8dp"
-                android:background="@drawable/rounded2"
-                android:backgroundTint="@color/Primaryorange" />
-
-            <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_margin="8dp"
-                android:background="@drawable/rounded2"
-                android:backgroundTint="@color/Primaryorange"
-                android:src="@drawable/ic_add" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="8dp">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="32dp"
-                android:layout_marginHorizontal="20dp"
-                android:padding="8dp"
-                android:text="Nama Produk"
-                android:textColor="@color/black" />
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="32dp"
-                android:layout_marginHorizontal="20dp"
-                android:background="@drawable/rounded2"
-                android:backgroundTint="@color/Primaryorange"
-                android:hint="Nama Produk"
-                android:padding="8dp"
-                android:textSize="12dp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="8dp">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="32dp"
-                android:layout_marginHorizontal="20dp"
-                android:padding="8dp"
-                android:text="Deskripsi"
-                android:textColor="@color/black" />
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="180dp"
-                android:layout_marginHorizontal="20dp"
-                android:background="@drawable/rounded2"
-                android:backgroundTint="@color/Primaryorange"
-                android:hint="Deskripsi"
-                android:padding="8dp"
-                android:textSize="12dp" />
-        </LinearLayout>
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="24dp"
-            android:background="@drawable/barround"
             android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@color/Primaryorange"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/back_inp"
+                    android:onClick="back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/transparent"
+                    android:src="@drawable/ic_baseline_arrow_back" />
+
+                <ImageButton
+                    android:id="@+id/btn_delete"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/rounded3"
+                    android:backgroundTint="@color/red"
+                    android:src="@drawable/ic_baseline_delete_24" />
+
+                <ImageButton
+                    android:id="@+id/btn_save"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:background="@drawable/rounded3"
+                    android:backgroundTint="@color/colorSuccess"
+                    android:src="@drawable/ic_baseline_save_24" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="8dp">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/rounded2"
+                    android:backgroundTint="@color/Primaryorange" />
+
+                <ImageButton
+                    android:id="@+id/btn_addphoto"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/rounded2"
+                    android:backgroundTint="@color/Primaryorange"
+                    android:src="@drawable/ic_add" />
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -125,115 +77,190 @@
                 android:padding="8dp">
 
                 <TextView
+                    android:id="@+id/txt_namaProduk"
                     android:layout_width="match_parent"
                     android:layout_height="32dp"
                     android:layout_marginHorizontal="20dp"
                     android:padding="8dp"
-                    android:text="Harga"
+                    android:text="Nama Produk"
                     android:textColor="@color/black" />
 
-                <EditText
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/naprod"
                     android:layout_width="match_parent"
-                    android:layout_height="32dp"
-                    android:layout_marginHorizontal="20dp"
-                    android:background="@drawable/rounded2"
-                    android:backgroundTint="@color/Primaryorange"
-                    android:hint="Harga"
-                    android:padding="8dp"
-                    android:textSize="12dp" />
+                    android:layout_height="wrap_content"
+                    app:hintTextAppearance="@style/TextAppearance.AppCompat"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_namaProduk">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="32dp"
+                        android:layout_marginHorizontal="20dp"
+                        android:background="@drawable/rounded2"
+                        android:backgroundTint="@color/Primaryorange"
+                        android:padding="8dp"
+                        android:textSize="12dp" />
+                </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="-12dp"
-                android:gravity="center_horizontal"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="8dp">
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
+                <TextView
+                    android:id="@+id/txt_deskripsi"
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:padding="8dp"
+                    android:text="Deskripsi"
+                    android:textColor="@color/black" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/desk"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="4dp">
+                    app:hintTextAppearance="@style/TextAppearance.AppCompat"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_deskripsi">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="32dp"
-                        android:layout_marginHorizontal="0dp"
-                        android:padding="8dp"
-                        android:text="Warna"
-                        android:textColor="@color/black" />
-
-                    <EditText
-                        android:layout_width="100dp"
-                        android:layout_height="32dp"
-                        android:layout_marginHorizontal="8dp"
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp"
+                        android:layout_marginHorizontal="20dp"
                         android:background="@drawable/rounded2"
                         android:backgroundTint="@color/Primaryorange"
-                        android:hint="variasi"
                         android:padding="8dp"
                         android:textSize="12dp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="4dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="32dp"
-                        android:layout_marginHorizontal="0dp"
-                        android:padding="8dp"
-                        android:text="Warna"
-                        android:textColor="@color/black" />
-
-                    <EditText
-                        android:layout_width="100dp"
-                        android:layout_height="32dp"
-                        android:layout_marginHorizontal="8dp"
-                        android:background="@drawable/rounded2"
-                        android:backgroundTint="@color/Primaryorange"
-                        android:hint="variasi"
-                        android:padding="8dp"
-                        android:textSize="12dp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="4dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="32dp"
-                        android:layout_marginHorizontal="0dp"
-                        android:padding="8dp"
-                        android:text="Warna"
-                        android:textColor="@color/black" />
-
-                    <EditText
-                        android:layout_width="100dp"
-                        android:layout_height="32dp"
-                        android:layout_marginHorizontal="8dp"
-                        android:background="@drawable/rounded2"
-                        android:backgroundTint="@color/Primaryorange"
-                        android:hint="variasi"
-                        android:padding="8dp"
-                        android:textSize="12dp" />
-                </LinearLayout>
-
+                </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
 
-            <Button
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_gravity="right"
-                android:layout_marginTop="-50dp"
-                android:background="@drawable/add"
-                android:backgroundTint="@color/black" />
-        </LinearLayout>
-    </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="18dp"
+                android:background="@drawable/rounded2"
+                android:backgroundTint="@color/colorLayout"
+                android:orientation="vertical"
+                android:padding="8dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="8dp">
+
+                    <TextView
+                        android:id="@+id/txt_harga"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="20dp"
+                        android:padding="8dp"
+                        android:text="Harga"
+                        android:textColor="@color/black" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/il_hrga"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:hintTextAppearance="@style/TextAppearance.AppCompat"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txt_harga">
+
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:paddingHorizontal="16dp"
+                            android:layout_marginHorizontal="20dp"
+                            android:inputType="number"
+                            android:background="@drawable/rounded2"
+                            android:backgroundTint="@color/Primaryorange"
+                            android:padding="8dp"
+                            android:textSize="12dp" >
+                        </com.google.android.material.textfield.TextInputEditText>
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="8dp">
+
+                    <TextView
+                        android:id="@+id/txt_warna"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="20dp"
+                        android:padding="8dp"
+                        android:text="Warna"
+                        android:textColor="@color/black" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/il_warna"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:hintTextAppearance="@style/TextAppearance.AppCompat"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txt_warna">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:paddingHorizontal="16dp"
+                            android:layout_marginHorizontal="20dp"
+                            android:inputType="text"
+                            android:background="@drawable/rounded2"
+                            android:backgroundTint="@color/Primaryorange"
+                            android:padding="8dp"
+                            android:textSize="12dp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="8dp">
+
+                    <TextView
+                        android:id="@+id/txt_ukuran"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="20dp"
+                        android:padding="8dp"
+                        android:text="Ukuran"
+                        android:textColor="@color/black" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/il_ukuran"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:hintTextAppearance="@style/TextAppearance.AppCompat"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txt_ukuran">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:paddingHorizontal="16dp"
+                            android:layout_marginHorizontal="20dp"
+                            android:inputType="text"
+                            android:background="@drawable/rounded2"
+                            android:backgroundTint="@color/Primaryorange"
+                            android:padding="8dp"
+                            android:textSize="12dp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+
+                </LinearLayout>
+            </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

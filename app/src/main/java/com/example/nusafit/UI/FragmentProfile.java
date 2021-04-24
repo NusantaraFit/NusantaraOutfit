@@ -23,7 +23,7 @@ import com.example.nusafit.SettingProfileActivity;
 import com.example.nusafit.ShoppingChartActivity;
 import com.example.nusafit.auth.AuthLoginActivity;
 import com.example.nusafit.entity.UserNF;
-import com.example.nusafit.input_product;
+import com.example.nusafit.activity_input_product;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -34,8 +34,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
-import org.w3c.dom.Text;
 
 public class FragmentProfile extends Fragment {
 
@@ -223,7 +221,7 @@ public class FragmentProfile extends Fragment {
     //function go to activity
 
     private void gostore() {
-        Intent intent = new Intent(getActivity(), input_product.class);
+        Intent intent = new Intent(getActivity(), activity_input_product.class);
         startActivity(intent);
     }
 

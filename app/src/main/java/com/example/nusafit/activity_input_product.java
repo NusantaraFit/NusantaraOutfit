@@ -7,7 +7,7 @@ import android.widget.ImageButton;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class input_product extends AppCompatActivity {
+public class activity_input_product extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,7 +17,7 @@ public class input_product extends AppCompatActivity {
 
     }
 
-    public void Kembali(View view) {
+    public void back(View view) {
         finish();
     }
 }

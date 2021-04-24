@@ -19,6 +19,7 @@
         <activity android:name=".LandingPage.IntroActivitySatu"/>
         <activity android:name=".LandingPage.IntroActivityDua"/>
         <activity android:name=".LandingPage.IntroActivityTiga"/>
+        <activity android:name=".activity_input_product"/>
 <!--        <activity android:name=".auth.AuthLoginActivity" />-->
 <!--        <activity android:name=".auth.AuthRegisterActivity"/>-->
 <!--        <activity android:name=".auth.AuthForgotPasswordActivity"/>-->
