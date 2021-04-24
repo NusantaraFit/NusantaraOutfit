@@ -10,8 +10,8 @@
     tools:context=".auth.AuthRegisterActivity">
 
     <ScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -38,7 +38,7 @@
                 android:layout_marginRight="150dp"
                 android:text="Nama Lengkap"
                 android:textColor="@color/black"
-                android:textSize="20dp"
+                android:textSize="18dp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/logoReg" />
@@ -54,9 +54,13 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/masukNama"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPersonName" />
+                    android:layout_width="300dp"
+                    android:layout_height="35dp"
+                    android:background="@drawable/rounded2"
+                    android:backgroundTint="@color/white"
+                    android:hint="|"
+                    android:inputType="textPersonName"
+                    android:paddingHorizontal="18dp" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -67,7 +71,7 @@
                 android:layout_marginRight="240dp"
                 android:text="Email"
                 android:textColor="@color/black"
-                android:textSize="20dp"
+                android:textSize="18dp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/inputNama" />
@@ -84,8 +88,12 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/masukEmail"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_width="300dp"
+                    android:paddingHorizontal="18dp"
+                    android:layout_height="35dp"
+                    android:background="@drawable/rounded2"
+                    android:backgroundTint="@color/white"
+                    android:hint="|"
                     android:inputType="textEmailAddress" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -97,7 +105,7 @@
                 android:layout_marginRight="200dp"
                 android:text="Password"
                 android:textColor="@color/black"
-                android:textSize="20dp"
+                android:textSize="18dp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/inputEmail" />
@@ -115,8 +123,12 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/masukPassword"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_width="300dp"
+                    android:layout_height="35dp"
+                    android:paddingHorizontal="18dp"
+                    android:background="@drawable/rounded2"
+                    android:backgroundTint="@color/white"
+                    android:hint="|"
                     android:inputType="textPassword" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -128,7 +140,7 @@
                 android:layout_marginRight="120dp"
                 android:text="Confirm Password"
                 android:textColor="@color/black"
-                android:textSize="20dp"
+                android:textSize="18dp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/inputPassword" />
@@ -146,8 +158,11 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/masukConPassword"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_width="300dp"
+                    android:layout_height="35dp"
+                    android:background="@drawable/rounded2"
+                    android:backgroundTint="@color/white"
+                    android:hint="|"
                     android:inputType="textPassword" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -165,10 +180,10 @@
 
             <Button
                 android:id="@+id/btnRegister"
-                android:layout_width="wrap_content"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/rounded"
+                android:background="@drawable/rounded2"
                 android:backgroundTint="#FFEA00"
                 android:text="Register"
                 app:layout_constraintLeft_toLeftOf="parent"

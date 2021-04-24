@@ -12,7 +12,10 @@ import androidx.fragment.app.Fragment;
 
 import com.example.nusafit.R;
 import com.example.nusafit.R;
+import com.example.nusafit.RoomchatViewPager;
 import com.example.nusafit.UI.*;
+
+import com.example.nusafit.input_product;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class FragmentStore extends Fragment {
@@ -43,6 +46,10 @@ public class FragmentStore extends Fragment {
 //        });
 
 
+    }
+    private void gofloat() {
+        Intent intent = new Intent(getActivity(), input_product.class);
+        startActivity(intent);
     }
 }
 

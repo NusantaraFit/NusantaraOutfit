@@ -39,15 +39,15 @@ public class FragmentHome extends Fragment {
         });
 
         //com.example.project_nusantarafit.chat
-        ImageButton chat = (ImageButton) rootView.findViewById(R.id.chat);
-        chat.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                goToAttract();
-                Intent intent = new Intent(getActivity(), ChatActivity.class);
-                startActivity(intent);
-            }
-        });
+//        ImageButton chat = (ImageButton) rootView.findViewById(R.id.btn_chathome);
+//        chat.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+////                goToAttract();
+//                Intent intent = new Intent(getActivity(), ChatActivity.class);
+//                startActivity(intent);
+//            }
+//        });
 
 
 

@@ -15,7 +15,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.example.nusafit.NusaPayment;
 import com.example.nusafit.R;
 import com.example.nusafit.RoomchatViewPager;
 import com.example.nusafit.SettingProfileActivity;
@@ -132,10 +131,6 @@ public class FragmentProfile extends Fragment {
     }
 
     //function go to activity
-    private void goToAttract() {
-        Intent intent = new Intent(getActivity(), NusaPayment.class);
-        startActivity(intent);
-    }
 
     private void gostore() {
         Intent intent = new Intent(getActivity(), input_product.class);
@@ -153,7 +148,7 @@ public class FragmentProfile extends Fragment {
     }
 
     private void gosett() {
-        Intent intent = new Intent(getActivity(), SettingProfileActivity.class);
+        Intent intent = new Intent(getActivity(),SettingProfileActivity.class);
         startActivity(intent);
     }
 

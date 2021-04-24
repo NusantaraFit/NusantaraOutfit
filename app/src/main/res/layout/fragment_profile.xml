@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:theme="@style/Widget.AppCompat.SearchView"
     android:layout_height="match_parent"
     android:background="@color/Primaryorange"
     android:orientation="vertical">
@@ -45,6 +46,7 @@
                     android:src="@drawable/cart" />
 
                 <ImageButton
+                    android:onClick="gochat"
                     android:id="@+id/btn_chatprof"
                     android:layout_width="35dp"
                     android:layout_height="35dp"
