@@ -4,11 +4,13 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -20,11 +22,20 @@ import com.example.nusafit.RoomchatViewPager;
 import com.example.nusafit.SettingProfileActivity;
 import com.example.nusafit.ShoppingChartActivity;
 import com.example.nusafit.auth.AuthLoginActivity;
+import com.example.nusafit.entity.UserNF;
 import com.example.nusafit.input_product;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import org.w3c.dom.Text;
 
 public class FragmentProfile extends Fragment {
 
@@ -35,10 +46,13 @@ public class FragmentProfile extends Fragment {
     private DatabaseReference mReference;
     private String getUserID;
 
+    private TextView namaProfil;
+
     private ImageButton BtnSetProfile;
     private ImageButton BtnCartProfile;
     private ImageButton BtnChat;
     private Button BtnLogout;
+    private Button BtnHapusakun;
 //    ImageButton BtnVoucherMyList;
 //    ImageButton BtnPointProfile;
 //    ImageButton BtnNusapay;
@@ -55,13 +69,27 @@ public class FragmentProfile extends Fragment {
         FirebaseUser user = mAuth.getCurrentUser();
         getUserID = user.getUid();
 
+        namaProfil = (TextView)rootView.findViewById(R.id.name_profile);
+        mReference.child("userNF").child(getUserID).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                UserNF userNf = snapshot.getValue(UserNF.class);
+                if (userNf != null) {
+                    namaProfil.setText(userNf.getNamalengkap());
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
         // Button ke Setting Profile
         BtnSetProfile = (ImageButton)rootView.findViewById(R.id.btn_setprof);
         BtnSetProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Intent intent = new Intent(getActivity(), input_product.class);
-//                startActivity(intent);
                 gosett();
             }
         });
@@ -121,6 +149,48 @@ public class FragmentProfile extends Fragment {
             }
         };
 
+        // Hapus Akun Activity
+        BtnHapusakun = (Button)rootView.findViewById(R.id.btn_hapusakun);
+        BtnHapusakun.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                builder.setTitle("Apakah anda yakin untuk menghapus akun ?");
+                builder.setMessage("Ketika anda menghapus akun, akun tidak bisa digunakan kembali.");
+
+                builder.setPositiveButton("HAPUS", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        hapusDataAkun();
+
+                        FirebaseUser usernf = mAuth.getCurrentUser();
+                        if (usernf != null) {
+                            usernf.delete()
+                                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<Void> task) {
+                                            if (task.isSuccessful()) {
+                                                Log.e("MyData", ": Berhasil Dihapus");
+                                            }
+                                        }
+                                    });
+                        }
+                    }
+                });
+
+                builder.setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                    }
+                });
+
+                AlertDialog alertDialog = builder.create();
+                alertDialog.show();
+            }
+        });
+
+
         // Button ke Katalog
 //        BtnKatalog = (ImageButton)rootView.findViewById(R.id.btn_katalog);
 //        BtnKatalog.setOnClickListener(new View.OnClickListener() {
@@ -139,6 +209,15 @@ public class FragmentProfile extends Fragment {
 //            }
 //        });
         return rootView;
+    }
+
+    private void hapusDataAkun() {
+        mReference.child("userNF").child(getUserID).removeValue().addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                Log.e("MyData", ": Akun Berhasil dihapus");
+            }
+        });
     }
 
     //function go to activity
@@ -175,119 +254,3 @@ public class FragmentProfile extends Fragment {
         mAuth.removeAuthStateListener(authStateListener);
     }
 }
-//    @Override
-//            public void onClick(View v) {
-//                goToAttract();
-//            }
-//        });
-
-//        class click implements View.OnClickListener {
-//            @Override
-//            public void onClick(View v) {
-//                switch (v.getId()) {
-//                    case R.id.btn_nusapay:
-//                        goToAttract();
-//                        break;
-//                    case R.id.setting_profile:
-//                        gosett();
-//                        break;
-//                    case R.id.btn_katalog:
-//                        gostore();
-//                        break;
-//                    case R.id.btn_chat:
-//                        gochat();
-//                        break;
-//                    case R.id.btn_cart:
-//                        gocart();
-//                        break;
-//                }
-//            }
-//        }
-//        return rootView;
-//    }
-
-
-//
-//        ImageButton BtnSetProfile = (ImageButton)rootView.findViewById(R.id.setting_profile);
-//        BtnSetProfile.setOnClickListener(new View.OnClickListener() {
-//
-//            @Override
-//            public void onClick(View v){
-//                Intent intent = new Intent(getActivity(), SettingProfileActivity.class);
-//                startActivity(intent);
-//            }
-//        });
-//// katalog
-//        ImageButton btnlog = (ImageButton)rootView.findViewById(R.id.btn_katalog);
-//        btnlog.setOnClickListener(new View.OnClickListener() {
-//
-//            @Override
-//            public void onClick(View v){
-////                Intent intent = new Intent(getActivity(), input_product.class);
-////                startActivity(intent);
-//                gostore();
-//            }
-//        });
-//
-//        ImageButton BtnVoucherMyList = (ImageButton)rootView.findViewById(R.id.voucher_profile);
-//        BtnVoucherMyList.setOnClickListener(new View.OnClickListener() {
-//
-//            @Override
-//            public void onClick(View v){
-//                Intent intent = new Intent(getActivity(), VoucherMyList.class);
-//                startActivity(intent);
-//            }
-//        });
-//
-//        ImageButton BtnPointProfile = (ImageButton)rootView.findViewById(R.id.point_profile);
-//        BtnPointProfile.setOnClickListener(new View.OnClickListener() {
-//
-//            @Override
-//            public void onClick(View v){
-//                Intent intent = new Intent(getActivity(), PointProfileActivity.class);
-//                startActivity(intent);
-//            }
-//        });
-//
-//        ImageButton BtnCartProfile = (ImageButton)rootView.findViewById(R.id.cart_profile);
-//        BtnCartProfile.setOnClickListener(new View.OnClickListener() {
-//
-//            @Override
-//            public void onClick(View v){
-//                Intent intent = new Intent(getActivity(), ShoppingChartActivity.class);
-//                startActivity(intent);
-//            }
-//        });
-//        return rootView;
-//------------------------------------------------
-
-//        BtnNusapay = (ImageButton) rootView.findViewById(R.id.btn_nusapay);
-//        BtnSetProfile = (ImageButton) rootView.findViewById(R.id.setting_profile);
-//        BtnKatalog = (ImageButton) rootView.findViewById(R.id.btn_katalog);
-//        BtnChat = (ImageButton) rootView.findViewById(R.id.chat);
-
-
-//        class click implements View.OnClickListener {
-//            @Override
-//            public void onClick(View v) {
-//                switch (v.getId()) {
-//                    case R.id.btn_nusapay:
-//                        goToAttract();
-//                        break;
-//                    case R.id.setting_profile:
-//                        gosett();
-//                        break;
-//                    case R.id.btn_katalog:
-//                        gostore();
-//                        break;
-//                    case R.id.btn_chat:
-//                        gochat();
-//                        break;
-//                    case R.id.btn_cart:
-//                        gocart();
-//                        break;
-//                }
-//
-//            }
-//        }
-//OnClick

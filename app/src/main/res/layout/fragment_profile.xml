@@ -119,6 +119,14 @@
                     android:background="@drawable/rounded2"
                     android:backgroundTint="#C1BEBE" />
 
+                <Button
+                    android:id="@+id/btn_hapusakun"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginVertical="4dp"
+                    android:background="@drawable/rounded2"
+                    android:backgroundTint="#C1BEBE"
+                    android:text="Hapus" />
 
                 <Button
                     android:id="@+id/btn_logout"

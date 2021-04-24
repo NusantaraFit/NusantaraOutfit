@@ -127,17 +127,17 @@ public class AuthRegisterActivity extends AppCompatActivity {
 
     //Auth success Register
     private void onAuthSuccess(FirebaseUser user) {
-        String username = edtName.getText().toString();
+        String namalengkap = edtName.getText().toString();
 
-        writeNewUser(user.getUid(), username, user.getEmail());
+        writeNewUser(user.getUid(), namalengkap, user.getEmail());
 
         Toast.makeText(AuthRegisterActivity.this, "Registrasi Berhasil !", Toast.LENGTH_SHORT).show();
         startActivity(new Intent(getApplicationContext(), AuthLoginActivity.class));
         finish();
     }
 
-    private void writeNewUser(String userID, String username, String email) {
-        UserNF userNF = new UserNF (username, email);
+    private void writeNewUser(String userID, String namalengkap, String email) {
+        UserNF userNF = new UserNF (namalengkap, email);
 
         mDatabase.child("userNF").child(userID).setValue(userNF);
     }
