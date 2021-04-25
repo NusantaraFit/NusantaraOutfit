@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -43,8 +44,9 @@ public class activity_input_product extends AppCompatActivity {
     private DatabaseReference references;
     private String getUserID;
 
-    private Button btn_delete, btn_save;
-    private TextInputLayout txt_namaProduk, txt_deskripsi, txt_harga, txt_warna, txt_ukuran;
+    private ImageButton btn_delete;
+    private ImageButton btn_save;
+    //private TextInputLayout txt_namaProduk, txt_deskripsi, txt_harga, txt_warna, txt_ukuran;
     private EditText edt_naprod, edt_desk, edt_harga, edt_warna, edt_ukuran;
     Produk produk;
 
@@ -70,15 +72,15 @@ public class activity_input_product extends AppCompatActivity {
         edt_ukuran = findViewById(R.id.edt_ukuran);
 
         //TextView
-        txt_namaProduk = findViewById(R.id.txt_namaProduk);
+        /*txt_namaProduk = findViewById(R.id.txt_namaProduk);
         txt_deskripsi = findViewById(R.id.txt_deskripsi);
         txt_harga = findViewById(R.id.txt_harga);
         txt_warna = findViewById(R.id.txt_warna);
-        txt_ukuran = findViewById(R.id.txt_ukuran);
+        txt_ukuran = findViewById(R.id.txt_ukuran);*/
 
         //Button
-        btn_save = findViewById(R.id.btn_save);
-        btn_delete = findViewById(R.id.btn_delete);
+        btn_save = (ImageButton) findViewById(R.id.btn_save);
+        btn_delete = (ImageButton) findViewById(R.id.btn_delete);
 
 //        references = FirebaseDatabase.getInstance().getReference().child("Produk");
         references.child("usernf").child(getUserID).child("jualan").addValueEventListener(new ValueEventListener() {
