@@ -13,12 +13,12 @@
         android:gravity="center_horizontal"
         android:orientation="vertical">
 
-        <com.google.android.material.appbar.AppBarLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:padding="8dp">
+<!--        <com.google.android.material.appbar.AppBarLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:gravity="center_vertical"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:padding="8dp">-->
 
             <Button
                 android:layout_width="35dp"
@@ -26,12 +26,12 @@
                 android:background="@drawable/ic_baseline_arrow_back"
                 android:onClick="onKembali" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:text="Edit Profile"
-                android:textSize="24dp" />
-        </com.google.android.material.appbar.AppBarLayout>
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="35dp"-->
+<!--                android:text="Edit Profile"-->
+<!--                android:textSize="24dp" />-->
+<!--        </com.google.android.material.appbar.AppBarLayout>-->
 
         <ImageView
             android:id="@+id/img_profile"

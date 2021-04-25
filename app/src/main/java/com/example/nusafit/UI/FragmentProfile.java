@@ -83,6 +83,24 @@ public class FragmentProfile extends Fragment {
             }
         });
 
+
+//        namaProfil = (TextView)rootView.findViewById(R.id.name_profile);
+//        mReference.child("userNF");
+//        mReference.child(getUserID);
+//        mReference.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot snapshot) {
+//                UserNF userNf = snapshot.getValue(UserNF.class);
+//                if (userNf != null) {
+//                    namaProfil.setText(userNf.getNamalengkap());
+//                }
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError error) {
+//            }
+//        });
+
         // Button ke Setting Profile
         BtnSetProfile = (ImageButton)rootView.findViewById(R.id.btn_setprof);
         BtnSetProfile.setOnClickListener(new View.OnClickListener() {
@@ -226,18 +244,18 @@ public class FragmentProfile extends Fragment {
     }
 
     private void gocart() {
-        Intent intent = new Intent(getActivity(), ShoppingChartActivity.class);
-        startActivity(intent);
+        Intent i = new Intent(getActivity(), ShoppingChartActivity.class);
+        startActivity(i);
     }
 
     private void gochat() {
-        Intent intent = new Intent(getActivity(), RoomchatViewPager.class);
-        startActivity(intent);
+        Intent i = new Intent(getActivity(), RoomchatViewPager.class);
+        startActivity(i);
     }
 
     private void gosett() {
-        Intent intent = new Intent(getActivity(),SettingProfileActivity.class);
-        startActivity(intent);
+        Intent i = new Intent(getActivity(), SettingProfileActivity.class);
+        startActivity(i);
     }
 
     @Override

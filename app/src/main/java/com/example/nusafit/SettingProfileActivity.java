@@ -50,8 +50,8 @@ public class SettingProfileActivity extends AppCompatActivity {
         mDatabase = FirebaseDatabase.getInstance();
         mReference = mDatabase.getReference();
         mAuth = FirebaseAuth.getInstance();
-        FirebaseUser user = mAuth.getCurrentUser();
-        getUserID = user.getUid();
+        usernf = mAuth.getCurrentUser();
+        getUserID = usernf.getUid();
 
         inputNamaLengkap = findViewById(R.id.inputNamaLengkap);
         inputJenkel = findViewById(R.id.inputJenkel);

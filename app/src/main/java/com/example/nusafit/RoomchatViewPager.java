@@ -9,8 +9,7 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import com.example.nusafit.chat.ChatAllFragment;
 import com.example.nusafit.chat.ChatUnreadFragment;
 
-public class RoomchatViewPager
-        extends FragmentPagerAdapter {
+public class RoomchatViewPager extends FragmentPagerAdapter {
 
     public RoomchatViewPager(
             @NonNull FragmentManager fm)

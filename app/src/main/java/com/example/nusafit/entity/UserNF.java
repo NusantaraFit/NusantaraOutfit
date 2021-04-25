@@ -1,15 +1,24 @@
 package com.example.nusafit.entity;
 
 public class UserNF {
-    private String namalengkap, email, alamat, ttl, jenkel, agama;
+    private String namalengkap, jenkel, ttl, alamat, agama, email;
     private String key;
+
+    public UserNF(String namalengkap, String jenkel, String ttl, String alamat, String agama, String email) {
+        this.namalengkap = namalengkap;
+        this.jenkel = jenkel;
+        this.ttl = ttl;
+        this.alamat = alamat;
+        this.agama = agama;
+        this.email = email;
+    }
 
     public UserNF(String namalengkap, String email) {
         this.namalengkap = namalengkap;
         this.email = email;
     }
 
-    public UserNF(String nama, String jenkel, String ttl, String alamat, String agama, String email) {
+    public UserNF() {
     }
 
     public String getNamalengkap() {
