@@ -187,6 +187,7 @@ public class FragmentProfile extends Fragment {
                                         public void onComplete(@NonNull Task<Void> task) {
                                             if (task.isSuccessful()) {
                                                 Log.e("MyData", ": Berhasil Dihapus");
+                                                startActivity(new Intent(getActivity(), AuthLoginActivity.class));
                                             }
                                         }
                                     });
