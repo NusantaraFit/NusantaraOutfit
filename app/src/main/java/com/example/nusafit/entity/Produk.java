@@ -3,9 +3,18 @@ package com.example.nusafit.entity;
 public class Produk {
     private String Nama_produk;
     private String Deskripsi;
-    private Integer Harga;
+    private String Harga;
     private String Warna;
-    private Integer Ukuran;
+    private String Ukuran;
+    private String Key;
+
+    public Produk(String namaProduk, String deskProduk, String hargaProduk, String warnaProduk, String ukuranProduk) {
+        this.Nama_produk = namaProduk;
+        this.Deskripsi = deskProduk;
+        this.Harga = hargaProduk;
+        this.Warna = warnaProduk;
+        this.Ukuran = ukuranProduk;
+    }
 
     public String getNama_produk() {
         return Nama_produk;
@@ -23,11 +32,11 @@ public class Produk {
         Deskripsi = deskripsi;
     }
 
-    public Integer getHarga() {
+    public String getHarga() {
         return Harga;
     }
 
-    public void setHarga(Integer harga) {
+    public void setHarga(String harga) {
         Harga = harga;
     }
 
@@ -39,11 +48,19 @@ public class Produk {
         Warna = warna;
     }
 
-    public Integer getUkuran() {
+    public String getUkuran() {
         return Ukuran;
     }
 
-    public void setUkuran(Integer ukuran) {
+    public void setUkuran(String ukuran) {
         Ukuran = ukuran;
+    }
+
+    public String getKey() {
+        return Key;
+    }
+
+    public void setKey(String key) {
+        Key = key;
     }
 }
